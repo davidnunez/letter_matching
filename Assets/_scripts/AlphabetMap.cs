@@ -7,7 +7,7 @@ public class AlphabetMap : MonoBehaviour {
 	public static Hashtable indexToLetter = new Hashtable();
 
 	// Use this for initialization
-	void Start () {
+	void OnEnable () {
 		letterToIndex.Add("a", 1);
 		letterToIndex.Add("b", 2);
 		letterToIndex.Add("c", 3);
@@ -70,7 +70,7 @@ public class AlphabetMap : MonoBehaviour {
 	}
 	
 	static public string getLetter(int index) {
-		return (string)letterToIndex[index];
+		return (string)indexToLetter[index];
 	}
 
 	static public int getIndex(string letter) {

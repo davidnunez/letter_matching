@@ -42,8 +42,8 @@ public class Letter : MonoBehaviour {
 	
 	}	
 	
-	void Randomize() {// will need to make this function more robust / customizable
-		letter = AlphabetMap.getLetter(Random.Range(0,26));
+	public void Randomize() {// will need to make this function more robust / customizable
+		letter = AlphabetMap.getLetter(Random.Range(1,27));
 		typeface = TYPEFACES[Random.Range(0, TYPEFACES.Length)];
 		
 		
@@ -60,6 +60,7 @@ public class Letter : MonoBehaviour {
 		} else {
 			highlow = "Low";
 		}
-		return typeface + highlow + "-" + AlphabetMap.getIndex(letter) + ".jpg";
+		return typeface + highlow + "-" + AlphabetMap.getIndex(letter).ToString("D2");
+;
 	}
 }
